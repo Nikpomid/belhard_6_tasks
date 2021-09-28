@@ -20,3 +20,12 @@ line_print(some_list)
     3
 8
 """
+some_list = [1, 2, [1, 2, [5, 7], 3], 8]
+
+
+def line_print(some, indent: int = 0):
+    for i in some:
+        if isinstance(i, list):
+            line_print(i, indent + 1)
+        else:
+            print(" " * indent * 4 + str(i))
